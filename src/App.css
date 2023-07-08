@@ -1,0 +1,112 @@
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+.logo {
+  height: 6em;
+  padding: 1.5em;
+  will-change: filter;
+  transition: filter 300ms;
+}
+.logo:hover {
+  filter: drop-shadow(0 0 2em #646cffaa);
+}
+.logo.react:hover {
+  filter: drop-shadow(0 0 2em #61dafbaa);
+}
+
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
+  }
+}
+
+.card {
+  padding: 2em;
+}
+
+.read-the-docs {
+  color: #888;
+}
+
+
+
+.menu__lists{
+  border: 2px solid rgba(0, 0, 0, 0.192);
+  border-radius: 0.5rem;
+  margin-top: 1rem;
+  list-style: none;
+}
+
+.menu__datas{
+  width: 80%;
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+.menu__data{
+  list-style: none;
+  cursor: pointer;
+
+}
+
+.menu__img{
+  width: 180px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 1rem;
+}
+
+.ratings{
+  display: flex;
+  justify-content: space-around;
+  gap: 1.5rem;
+  align-items: center;
+  border: 2px solid rgba(0, 0, 0, 0.185);
+  padding: 1rem;
+  border-radius: 0.5rem;
+  margin-top: 1rem;
+}
+
+.ratings__PP{
+  width: 3rem;
+  border-radius: 50%;
+}
+
+.review{
+  border: 2px solid rgba(0, 0, 0, 0.178);
+  border-radius: 1rem;
+  padding: 1rem;
+  background: white;
+}
+
+
+.restaurant__detailpage{
+  position: relative;
+}
+
+.review{
+  position: absolute;
+  top: 200px;
+}
+
+.review__form{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
