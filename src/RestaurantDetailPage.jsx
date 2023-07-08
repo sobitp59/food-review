@@ -9,19 +9,14 @@ const RestaurantDetailPage = () => {
     const navigate = useNavigate();
     const {restaurantID} = useParams();
 
-    const revNames = ['Mohan', 'Jack', 'Siya', 'Raj', 'Mohit', 'Raju', 'Shayam'];
-    const PPs = [
-        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS5tbKdv1HDbAjPc526SK0yDZuoOmaaOyGNoj_e1q3ngruK2bTqzub3&s=0",
-
-        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT3uO7UUBnkvtntc2R8Y9krkgWvbl-BTKMazZjg8Ul-gmDgzQeb8I6DIQ&s=0",
-
-        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSoZ_Xg9XbpVTth91jSsUrrGzlx_v-YZ8pD4YLfGUR4CAdzq_D-DhN_&s=0"
-    ]
+    
 
 
     const [reviews, setReviews] = useState({
         rating : '',
         comment : '',
+        PP : '',
+        revName : ''
     })
 
     const [reviewLists, setReviewLists] = useState([])
@@ -33,6 +28,7 @@ const RestaurantDetailPage = () => {
 
     const [{name, address, averageRating , description, ratings }] = data;
 
+    console.log(reviewLists)
 
   return (
     <div className='restaurant__detailpage'>
@@ -71,11 +67,11 @@ const RestaurantDetailPage = () => {
                     
         {reviewLists?.length > 0 && (
             <ul>
-                {reviewLists?.map(({comment, rating}, index) => (
+                {reviewLists?.map(({comment, rating, PP, revName}, index) => (
                     <li key={index} className='ratings'>
                         <div>
-                            <img className='ratings__PP' src={revNames[Math.floor(Math.random() * revNames?.length)]} />
-                            <h3>{revNames[Math.floor(Math.random() * revNames?.length)]}</h3>
+                            <img className='ratings__PP' src={PP} />
+                            <h3>{revName}</h3>
                         </div>
                         <div>
                             <p>{comment}</p>
