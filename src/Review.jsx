@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 
 const Review = ({reviews, setReviews, setShowReview, setReviewLists}) => {
     
@@ -25,13 +25,20 @@ const Review = ({reviews, setReviews, setShowReview, setReviewLists}) => {
     const getReview = (e) => {
         e?.preventDefault();
  
-        setReviews((prev) => ({...prev, PP : PPs[Math.floor(Math.random() * PPs?.length)],  revName : revNames[Math.floor(Math.random() * revNames?.length)] }));
-
-        console.log(reviews)
- 
-        setReviewLists((prev) => [...prev, reviews]);
-        setShowReview(false)
+        const newReview = {
+            ...reviews,
+            PP: PPs[Math.floor(Math.random() * PPs?.length)],
+            revName: revNames[Math.floor(Math.random() * revNames?.length)]
+          };
+      
+          setReviews(newReview);
+          setReviewLists((prev) => [...prev, newReview]);
+          setShowReview(false);
     }
+
+    useEffect(() => {
+        console.log(reviews);
+      }, [reviews]);
   
     return (
     <div className='review'>
